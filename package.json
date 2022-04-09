@@ -1,4 +1,4 @@
-{
+{  "homepage": "https://Rmoreno3.github.io/workshop-1-Fetc",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
