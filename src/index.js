@@ -1,5 +1,6 @@
 // API
-const URL = 'https://platzi-avo.vercel.app/api/avo'
+const URL = 'https://platzi-avo.vercel.app'
+const app = document.querySelector('#app');
 
 //Web API usando ASYNC / AWAIT
 //Conectarnos al server
@@ -7,29 +8,32 @@ const URL = 'https://platzi-avo.vercel.app/api/avo'
 //JSON -> Data -> Renderizar informacion
 
 const fetchData = async () => {
-  const response = await fetch(URL);
+  const response = await fetch(`${URL}/api/avo`);
   const data = await response.json();
   const allItems = [];
 
   data.data.forEach((item) => {
-    //Create Title
-    const title =
-    document.createElement('h1');
     //Create Image
     const image =
     document.createElement('img');
+    image.src = `${URL}${item.image}`;
+    //Create Title
+    const title =
+    document.createElement('h1');
+    title.textContent = item.name;
     //Create Price
     const price =
     document.createElement('span');
+    price.textContent = item.price;
 
     const container = document.createElement('div');
-    container.append(title, image, price);
+    container.append(image, title, price);
 
     allItems.push(container)
 
   })
   
-  document.body.append(...allItems)
+  app.append(...allItems)
 }
 
 fetchData();
