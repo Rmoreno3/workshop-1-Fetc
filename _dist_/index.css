@@ -32,6 +32,5 @@
 .card:hover {
   box-shadow: 6px 9px 24px 0px rgba(0,0,0,0.6);
   transform: scale(1.1);
-  transition-duration: 1s;
-  transition-timing-function: ease;
+  transition: ease 1s;
 }
