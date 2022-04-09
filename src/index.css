@@ -1,3 +1,37 @@
 @import 'tailwindcss/dist/base.css';
 @import 'tailwindcss/dist/components.css';
 @import 'tailwindcss/dist/utilities.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border: 2px solid rgba(28,110,164,0.23);
+  border-radius: 5px;
+}
+
+.card > img {
+  border-bottom: 2px solid rgba(28,110,164,0.23);
+}
+
+.card:hover {
+  box-shadow: 6px 9px 24px 0px rgba(0,0,0,0.6);
+  transform: scale(1.1);
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
